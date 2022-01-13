@@ -1,0 +1,61 @@
+<html>
+    <head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=shadow-multiple">
+        <style>
+              
+            body {background-color: #8dceec;}
+            p   {color: #64186e;}
+            h1   {color:  #3c2896;}    
+        </style>
+        <script src="myfile.js"> 
+        </script>
+        <p style="font-size:80px" class="font-effect-shadow-multiple">Grammer Spell Check </p>  </head>
+<body style=text-align:center;>
+ <form id="newform"></form>
+<h1>Show a file-select field which allows only one file to be chosen<h1>
+<form action="/action_page.php">
+  <label for="myfile">Select a file</label>
+  <input type="file" id="myfile" name="myfile"><br><br>
+  
+<textarea name="mytextarea" id="mytextarea" cols="30" rows="4" style="max-width: 500px; width:100%; height:200px; margin-bottom: 20px; "></textarea>
+<div style="text-align:center">  
+  <input type="reset" />  
+</div>  
+
+
+</form>
+
+</body>
+
+
+<script>
+let input = document.querySelector('input')
+
+let textarea = document.querySelector('textarea')
+
+
+input.addEventListener('change', () => {
+	let files = input.files;
+
+	if (files.length == 0) return;
+
+	
+	const file = files[0];
+
+	let reader = new FileReader();
+
+	reader.onload = (e) => {
+		const file = e.target.result;
+
+	
+		const lines = file.split(/\r\n|\n/);
+		textarea.value = lines.join('\n');
+
+	};
+
+	reader.onerror = (e) => alert(e.target.error.name);
+
+	reader.readAsText(file);
+});
+</script>
+</html>

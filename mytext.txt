@@ -1,0 +1,4 @@
+   This is a simple exampl of Spell-cheking As-You-Type usng javascript spellcheck.It works in almst any broser.
+The buttn bellow shows an alternatve way to spellcheck using javascrip spellcheck - using a dalog iwndow!
+   The objctive of this work is to perform a spell check tool that analyzs the tet enteed in search for possible misspellings.
+This tool will sugest possible corections for each misspeled word in the text. 
